@@ -1,0 +1,80 @@
+body {
+    background-color: #ecf0f1;
+    margin: 0px;
+    padding: 0px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #2c3e50;
+    margin: 0px;
+}
+
+.header_title {
+    font-size: 50px;
+    text-align: center;
+    padding: 7px;
+}
+
+hr {
+    border: none;
+    background-color: #34495e;
+    height: 1px;
+    margin: 40px 200px ;
+}
+
+.btn_control {
+    margin: auto;
+    width: 244px;
+}
+
+.btn_std {
+    width: 100px;
+    margin: 10px;
+}
+
+.exp {
+    border-radius: 10px;
+    background-color: #bdc3c74b;
+    padding: 15px;
+}
+
+.exp_title {
+    margin-top: 0px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.new_exp {
+    margin-bottom: 15px;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: scale3d(.3,.3,.3);
+    }
+    to {
+        opacity: 1;
+        transform: scale3d(1,1,1);
+    }
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+        transform: scale3d(1,1,1);
+    }
+    to {
+        opacity: 0;
+        transform: scale3d(.3,.3,.3);
+    }
+}
+
+.fade-enter-active {
+        animation: fadein .7s;
+}
+
+.fade-leave-to {
+    animation: fadeout .7s;
+}

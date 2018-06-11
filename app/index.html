@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="frameworks/vue.js"></script>
+    <link rel="stylesheet" href="frameworks/bootstrap.min.css">
+    <!-- <script src="scripts.js"></script> -->
+    <link rel="stylesheet" href="style.css">
+    <title>Regexp test</title>
+</head>
+
+<body>
+    <div class="regexp_app">
+        <h1 class="header_title">Regexp tester</h1>
+        <hr>
+        <div class="row">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2  col-xs-10 col-xs-offset-1">
+                    <label for="regexp">Regular expression</label>
+                    <input type="text" class="form-control" id="regexp" placeholder="/Your regexp here/i" v-model="regexp">
+                </div>
+            </div>
+        </div>
+
+        <div class="btn_control">
+            <button class="btn btn-lg btn-primary btn_std" @click="addNewExpression">Add</button>
+            <button class="btn btn-lg btn-danger btn_std" @click="deleteExpression">Delete</button>
+        </div>
+        <div class="row">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2 col-xs-10 col-xs-offset-1 exp">
+                    <h2 class="exp_title">Expressions</h2>
+                    <transition-group name="fade">
+                        <div class="row new_exp" v-for="(exp, index) in expressions" v-bind:key="exp">
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-8">
+                                <input type="text" class="form-control" placeholder="Your expression here" v-model="exp.expression" v-on:input="recheck(index)">
+                            </div>
+                            <div class="col-lg-2 col-xs-2">
+                                <h3>
+                                    <span class="label" v-bind:class="{'label-success': exp.isTrue, 'label-danger': !exp.isTrue}">{{exp.label_text}}</span>
+                                </h3>
+                            </div>
+                        </div>
+                    </transition-group>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
